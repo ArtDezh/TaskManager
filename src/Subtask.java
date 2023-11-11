@@ -5,11 +5,9 @@ public class Subtask extends Task {
 
     @Override
     public String toString() {
-        return "Subtask{" +
-                "nameTask='" + nameTask + '\'' +
-                ", DescriptionTask='" + DescriptionTask + '\'' +
-                ", idTask=" + idTask +
-                ", statusTask='" + statusTask + '\'' +
-                '}';
+        return "Название подзадачи: " + nameTask +
+                ", Описание подзадачи: " + descriptionTask +
+                ", Id подзадачи: " + idTask +
+                ", Статус подзадачи: " + statusTask;
     }
 }

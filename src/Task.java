@@ -1,23 +1,21 @@
 public class Task {
     protected String nameTask;
-    protected String DescriptionTask;
+    protected String descriptionTask;
     protected int idTask;
     protected String statusTask;
 
     public Task(String nameTask, String descriptionTask, int idTask, String statusTask) {
         this.nameTask = nameTask;
-        DescriptionTask = descriptionTask;
+        this.descriptionTask = descriptionTask;
         this.idTask = idTask;
         this.statusTask = statusTask;
     }
 
     @Override
     public String toString() {
-        return "Task{" +
-                "nameTask='" + nameTask + '\'' +
-                ", DescriptionTask='" + DescriptionTask + '\'' +
-                ", idTask=" + idTask +
-                ", statusTask='" + statusTask + '\'' +
-                '}';
+        return "Название задачи: " + nameTask +
+                ", Описание задачи: " + descriptionTask +
+                ", Id задачи: " + idTask +
+                ", Статус задачи: " + statusTask;
     }
 }

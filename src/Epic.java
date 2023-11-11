@@ -5,11 +5,9 @@ public class Epic extends Task {
 
     @Override
     public String toString() {
-        return "Epic{" +
-                "nameTask='" + nameTask + '\'' +
-                ", DescriptionTask='" + DescriptionTask + '\'' +
-                ", idTask=" + idTask +
-                ", statusTask='" + statusTask + '\'' +
-                '}';
+        return "Название эпика: " + nameTask +
+                ", Описание эпика: " + descriptionTask +
+                ", Id эпика: " + idTask +
+                ", Статус эпика: " + statusTask;
     }
 }
