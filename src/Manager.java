@@ -6,22 +6,21 @@ public class Manager {
     private final String[] arrConst = {"NEW", "IN_PROGRESS", "DONE"};
     private int countTask;
     private int countEpic;
-    //private int countSubtask;
     HashMap<Integer, Task> mapTask = new HashMap<>();
     HashMap<Integer, Epic> mapEpic = new HashMap<>();
     ArrayList<Subtask> listSubtask = new ArrayList<>(10);
 
-    public void creatAndAddTaskToMap(Task newObj) {
+    public void createAndAddTaskToMap(Task newObj) {
         ++countTask;
         mapTask.put(countTask, newObj);
     }
 
-    public void creatAndAddEpicToMap(Epic newObj) {
+    public void createAndAddEpicToMap(Epic newObj) {
         ++countEpic;
         mapEpic.put(countEpic, newObj);
     }
 
-    public void creatAndAddSubtaskToList(Subtask newObj) {
+    public void createAndAddSubtaskToList(Subtask newObj) {
         listSubtask.add(newObj);
     }
 
@@ -50,43 +49,43 @@ public class Manager {
         System.out.println();
     }
 
-    public void delateAllTask(HashMap<Integer, Task> map) {
-        map.clear();
+    public void deleteAllTask() {
+        mapTask.clear();
     }
 
-    public void delateAllEpic(HashMap<Integer, Epic> map) {
-        map.clear();
+    public void deleteAllEpic() {
+        mapEpic.clear();
     }
 
-    public void delateAllSubtask(ArrayList<Subtask> list) {
-        list.clear();
+    public void deleteAllSubtask() {
+        listSubtask.clear();
     }
 
-    public Task getTaskById(HashMap<Integer, Task> map, int idTask) {
-        return map.get(idTask);
+    public Task getTaskById(int idTask) {
+        return mapTask.get(idTask);
     }
 
-    public Epic getEpicById(HashMap<Integer, Epic> map, int idEpic) {
-        return map.get(idEpic);
+    public Epic getEpicById(int idEpic) {
+        return mapEpic.get(idEpic);
     }
 
-    public Subtask getSubtaskById(ArrayList<Subtask> list, int idSubtask) {
-        for (Subtask obj : list) {
+    public Subtask getSubtaskById(int idSubtask) {
+        for (Subtask obj : listSubtask) {
             if (obj.idTask == idSubtask) return obj;
         }
         System.out.println("С таким id подзадач нет");
         return null;
     }
 
-    public void delateTaskById(int idTask) {
+    public void deleteTaskById(int idTask) {
         mapTask.remove(idTask);
     }
 
-    public void delateEpicById(int idEpic) {
+    public void deleteEpicById(int idEpic) {
         mapEpic.remove(idEpic);
     }
 
-    public void delateSubtaskById(int idSubtask) {
+    public void deleteSubtaskById(int idSubtask) {
         for (int i = 0; i < listSubtask.size(); i++) {
             if (listSubtask.get(i).idTask == idSubtask - 1) listSubtask.remove(i);
         }
@@ -113,7 +112,6 @@ public class Manager {
         if (countInProgress > 0) newObj.statusTask = arrConst[1];
         if (countNew == 0 && countInProgress == 0 && countDone > 0) newObj.statusTask = arrConst[2];
 
-        //mapEpic.replace(idEpic, mapEpic.get(idEpic), newObj);
         mapEpic.put(idEpic, newObj);
     }
 
